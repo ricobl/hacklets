@@ -1,0 +1,25 @@
+---
+import Base from './Base.astro'
+
+interface Props {
+  frontmatter?: {
+    title?: string
+    description?: string
+    lead?: string
+  }
+}
+
+const { frontmatter } = Astro.props
+const title = frontmatter?.title ?? 'Hacklets'
+const description = frontmatter?.description ?? ''
+const lead = frontmatter?.lead
+---
+
+<Base title={`${title} · Hacklets`} description={description}>
+  <div class="mx-auto max-w-3xl px-5 py-10">
+    {lead && <p class="text-lg text-muted mb-8">{lead}</p>}
+    <article class="prose">
+      <slot />
+    </article>
+  </div>
+</Base>

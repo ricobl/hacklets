@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800" width="1280" height="800">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1b2333"/>
+      <stop offset="1" stop-color="#0d1117"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="800" fill="url(#bg)"/>
+  <rect x="0" y="0" width="1280" height="44" fill="#0d1117"/>
+  <rect x="16" y="14" width="12" height="12" rx="6" fill="#ff5f57"/>
+  <rect x="36" y="14" width="12" height="12" rx="6" fill="#febc2e"/>
+  <rect x="56" y="14" width="12" height="12" rx="6" fill="#28c840"/>
+  <rect x="520" y="10" width="240" height="24" rx="12" fill="#161b22" stroke="#2e3138"/>
+  <rect x="0" y="44" width="1280" height="756" fill="#0d1117" opacity="0.35"/>
+  <g>
+    <rect x="180" y="90" width="920" height="520" rx="14" fill="#1d1f23" stroke="#2e3138"/>
+    <rect x="200" y="112" width="880" height="56" rx="10" fill="#161b22" stroke="#2e3138"/>
+    <text x="224" y="146" font-family="ui-monospace, Menlo, monospace" font-size="26" fill="#e8eaed">share</text>
+    <rect x="1010" y="120" width="56" height="40" rx="8" fill="#00c97a" opacity="0.15"/>
+    <text x="1026" y="147" font-family="ui-monospace, Menlo, monospace" font-size="22" fill="#00c97a">esc</text>
+    <rect x="200" y="188" width="880" height="64" rx="10" fill="#25272d" stroke="#00c97a"/>
+    <text x="228" y="214" font-family="ui-monospace, Menlo, monospace" font-size="24">🔗</text>
+    <text x="272" y="214" font-family="-apple-system, Segoe UI, sans-serif" font-size="24" fill="#e8eaed">Share as Markdown</text>
+    <text x="960" y="214" font-family="-apple-system, Segoe UI, sans-serif" font-size="18" fill="#00c97a">↵</text>
+    <g>
+      <rect x="200" y="260" width="880" height="56" rx="10" fill="#1d1f23"/>
+      <text x="228" y="293" font-family="ui-monospace, Menlo, monospace" font-size="24">📄</text>
+      <text x="272" y="293" font-family="-apple-system, Segoe UI, sans-serif" font-size="24" fill="#e8eaed">Share on Slack</text>
+      <text x="1050" y="293" font-family="-apple-system, Segoe UI, sans-serif" font-size="16" fill="#9aa0a6">Alt+2</text>
+    </g>
+    <g>
+      <rect x="200" y="324" width="880" height="56" rx="10" fill="#1d1f23"/>
+      <text x="228" y="357" font-family="ui-monospace, Menlo, monospace" font-size="24">🔎</text>
+      <text x="272" y="357" font-family="-apple-system, Segoe UI, sans-serif" font-size="24" fill="#e8eaed">Search Selection Google</text>
+      <text x="1050" y="357" font-family="-apple-system, Segoe UI, sans-serif" font-size="16" fill="#9aa0a6">Alt+3</text>
+    </g>
+    <g>
+      <rect x="200" y="388" width="880" height="56" rx="10" fill="#1d1f23"/>
+      <text x="228" y="421" font-family="ui-monospace, Menlo, monospace" font-size="24">🕐</text>
+      <text x="272" y="421" font-family="-apple-system, Segoe UI, sans-serif" font-size="24" fill="#e8eaed">Print Current Page</text>
+      <text x="1050" y="421" font-family="-apple-system, Segoe UI, sans-serif" font-size="16" fill="#9aa0a6">Alt+4</text>
+    </g>
+    <rect x="200" y="472" width="880" height="44" rx="8" fill="#161b22"/>
+    <text x="224" y="500" font-family="-apple-system, Segoe UI, sans-serif" font-size="17" fill="#9aa0a6">Results 4 · press</text>
+    <text x="448" y="500" font-family="ui-monospace, Menlo, monospace" font-size="16" fill="#00c97a">⌘↵</text>
+    <text x="500" y="500" font-family="-apple-system, Segoe UI, sans-serif" font-size="17" fill="#9aa0a6">to run</text>
+  </g>
+</svg>

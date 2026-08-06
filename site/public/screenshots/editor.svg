@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800" width="1280" height="800">
+  <rect width="1280" height="800" fill="#0d1117"/>
+  <rect x="0" y="0" width="1280" height="44" fill="#0d1117"/>
+  <rect x="16" y="14" width="12" height="12" rx="6" fill="#ff5f57"/>
+  <rect x="36" y="14" width="12" height="12" rx="6" fill="#febc2e"/>
+  <rect x="56" y="14" width="12" height="12" rx="6" fill="#28c840"/>
+  <rect x="300" y="100" width="300" height="600" rx="12" fill="#1d1f23" stroke="#2e3138"/>
+  <rect x="320" y="122" width="260" height="36" rx="8" fill="#161b22"/>
+  <text x="336" y="146" font-family="-apple-system, Segoe UI, sans-serif" font-size="15" fill="#9aa0a6">user-scripts/</text>
+  <rect x="320" y="176" width="260" height="32" rx="6" fill="#25272d"/>
+  <text x="336" y="198" font-family="-apple-system, Segoe UI, sans-serif" font-size="14" fill="#e8eaed">📄 greet.js</text>
+  <rect x="320" y="216" width="260" height="32" rx="6" fill="#1d1f23"/>
+  <text x="336" y="238" font-family="-apple-system, Segoe UI, sans-serif" font-size="14" fill="#e8eaed">📄 count-links.js</text>
+  <rect x="320" y="256" width="260" height="32" rx="6" fill="#1d1f23"/>
+  <text x="336" y="278" font-family="-apple-system, Segoe UI, sans-serif" font-size="14" fill="#e8eaed">📄 share-on-slack.js</text>
+  <rect x="300" y="140" width="650" height="560" rx="12" fill="#1d1f23" stroke="#2e3138"/>
+  <text x="340" y="190" font-family="ui-monospace, Menlo, monospace" font-size="17" fill="#9aa0a6">// ==UserScript==</text>
+  <text x="340" y="222" font-family="ui-monospace, Menlo, monospace" font-size="17" fill="#9aa0a6">// @name     Greet the page</text>
+  <text x="340" y="254" font-family="ui-monospace, Menlo, monospace" font-size="17" fill="#9aa0a6">// @emoji    👋</text>
+  <text x="340" y="286" font-family="ui-monospace, Menlo, monospace" font-size="17" fill="#9aa0a6">// ==/UserScript==</text>
+  <text x="340" y="334" font-family="ui-monospace, Menlo, monospace" font-size="17" fill="#e8eaed">const name = prompt('Hi!')</text>
+  <rect x="340" y="370" width="260" height="28" rx="6" fill="#00c97a" opacity="0.12"/>
+  <text x="352" y="390" font-family="ui-monospace, Menlo, monospace" font-size="14" fill="#00c97a">alert(`Hello ${name}`)</text>
+  <text x="340" y="426" font-family="ui-monospace, Menlo, monospace" font-size="17" fill="#e8eaed">window.__hacklets__ = { name }</text>
+  <text x="920" y="170" font-family="-apple-system, Segoe UI, sans-serif" font-size="16" fill="#e8eaed" text-anchor="end" font-weight="600">Script Editor</text>
+  <text x="920" y="196" font-family="-apple-system, Segoe UI, sans-serif" font-size="13" fill="#9aa0a6" text-anchor="end">CodeJar · Prism · saved locally</text>
+</svg>

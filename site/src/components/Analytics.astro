@@ -1,0 +1,67 @@
+---
+const gaId = import.meta.env.PUBLIC_GA_ID as string | undefined
+const base = import.meta.env.BASE_URL
+
+const gtagScript = `
+(() => {
+  const GA_ID = ${JSON.stringify(gaId ?? null)}
+  const KEY = 'hacklets-consent'
+  const load = () => {
+    const s = document.createElement('script')
+    s.async = true
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID
+    document.head.appendChild(s)
+    window.dataLayer = window.dataLayer || []
+    window.gtag = function () { window.dataLayer.push(arguments) }
+    window.gtag('js', new Date())
+    window.gtag('config', GA_ID)
+  }
+  const banner = document.getElementById('cookie-consent')
+  const consent = localStorage.getItem(KEY)
+  if (consent === 'granted') {
+    load()
+  } else if (consent === 'denied') {
+    // no tracker
+  } else if (banner) {
+    banner.classList.remove('hidden')
+    banner.querySelectorAll('[data-consent]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const choice = btn.getAttribute('data-consent')
+        localStorage.setItem(KEY, choice)
+        banner.classList.add('hidden')
+        if (choice === 'granted') load()
+      })
+    })
+  }
+})()
+`
+---
+
+{gaId && (
+  <>
+    <div
+      id="cookie-consent"
+      class="hidden fixed bottom-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-lg rounded-xl border border-border bg-panel p-4 shadow-xl"
+    >
+      <p class="text-sm text-ink/90 mb-3">
+        This site uses Google Analytics cookies to understand aggregate usage.
+        See the <a href={base + 'privacy/'} class="text-accent underline underline-offset-4">privacy policy</a>.
+      </p>
+      <div class="flex justify-end gap-2">
+        <button
+          data-consent="denied"
+          class="rounded-md border border-border px-3 py-1.5 text-sm text-muted hover:text-ink transition-colors"
+        >
+          Decline
+        </button>
+        <button
+          data-consent="granted"
+          class="rounded-md bg-accent px-3 py-1.5 text-sm font-semibold text-bg hover:brightness-110 transition-all"
+        >
+          Accept
+        </button>
+      </div>
+    </div>
+    <script is:inline set:html={gtagScript} />
+  </>
+)}

@@ -1,0 +1,41 @@
+---
+const results = [
+  { emoji: '🔗', title: 'Share as Markdown', note: '⌘↵' },
+  { emoji: '💬', title: 'Share on Slack', note: 'Alt+2' },
+  { emoji: '🔎', title: 'Search Selection Google', note: 'Alt+3' },
+  { emoji: '🕐', title: 'Print Current Page', note: 'Alt+4' },
+]
+---
+
+<div class="palette-mockup relative mx-auto w-full max-w-xl rounded-xl border border-border bg-panel shadow-2xl shadow-black/60 overflow-hidden">
+  <div class="flex items-center gap-3 border-b border-border px-4 py-3 bg-panel-2/50">
+    <div class="flex-1 font-mono text-[15px] text-ink">
+      share
+      <span class="caret inline-block w-[2px] h-[18px] bg-accent align-middle ml-0.5"></span>
+    </div>
+    <kbd class="kbd">esc</kbd>
+  </div>
+  <ul>
+    {results.map((r, i) => (
+      <li
+        class:list={[
+          'flex items-center gap-3 px-4 py-3 border-b border-border/60 last:border-0',
+          i === 0 && 'bg-panel-2',
+        ]}
+      >
+        <span class="w-6 text-center">{r.emoji}</span>
+        <span class:list={['flex-1 text-[15px]', i === 0 ? 'text-ink' : 'text-muted']}>
+          {r.title}
+        </span>
+        {i === 0 ? (
+          <span class="text-[13px] font-mono text-accent">{r.note}</span>
+        ) : (
+          <span class="text-[12px] font-mono text-muted/70">{r.note}</span>
+        )}
+      </li>
+    ))}
+  </ul>
+  <div class="px-4 py-2 bg-bg/50 text-[12px] text-muted font-mono">
+    results 4 · press <span class="text-accent">⌘↵</span> to run
+  </div>
+</div>
