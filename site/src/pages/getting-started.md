@@ -24,8 +24,8 @@ There are two palettes, each with its own shortcut displaying a category of item
 | `Cmd+P` / `Ctrl+P`             | Bookmarks | Everything in your bookmarks     |
 | `Cmd+Shift+P` / `Ctrl+Shift+P` | Commands  | Built-ins, scripts, bookmarklets |
 
-It's possible that these may conflict with native browser shortcuts like for
-printing a page.
+It's possible that these may conflict with native browser shortcuts like the one
+for the print dialog.
 
 You can customize these shortcuts in the browser extension management but who
 prints anything these days? (You still can via the built-in "Print" command.)
@@ -34,6 +34,9 @@ In Chrome, extension shortcuts will take precedence over browser-native ones.
 
 That doesn't happen with Firefox, you'll either need to pick a different shortcut
 or disable the native one in `about:keyboard`.
+
+See [Shortcuts](/hacklets/shortcuts/) for more information and troubleshooting
+conflicts.
 
 ## Open your first palette
 

@@ -59,27 +59,3 @@ that decides the order of otherwise-equal results:
   used one.
 - **Auto-cleanup** — entries older than 120 days are pruned, and the store caps
   at 50 items, so the ranking stays fast.
-
-## Keyboard interaction
-
-The palette is designed to be driven entirely from the keyboard:
-
-| Key                | Action                                    |
-| ------------------ | ----------------------------------------- |
-| `Type`             | Filter results live                       |
-| `Up` / `Down`      | Move the highlight                        |
-| `Alt+1` … `Alt+9`  | Run the 1st…9th result directly           |
-| `Enter`            | Run the highlighted item                  |
-| `<modifier>+Enter` | Run with modifiers (e.g. open in new tab) |
-| `Esc`              | Close the palette                         |
-
-Each script/command has its own way of dealing with modifiers, slightly changing
-its behaviour.
-
-Use the following to control how bookmarks are opened:
-
-| Key                        | Action                                                                   |
-| -------------------------- | ------------------------------------------------------------------------ |
-| `Right Arrow`              | Open in background tab, keeps palette open so you can open multiple tabs |
-| `Cmd+Enter` / `Ctrl+Enter` | Open in a new tab                                                        |
-| `Shift+Enter`              | Open in a new window                                                     |
