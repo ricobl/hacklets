@@ -14,38 +14,38 @@ lead: 'Search rules, ranking, and keyboard interaction — how to find anything 
 - Terms that match **in the order you typed them** score higher than unordered
   matches.
 
+Every match is scored based on factors that include match length, position and order.
+
+Results are sorted best-first and non-matches are taken out.
+
 For a query `git push`:
 
-| Title                   | Matches?                       |
-| ----------------------- | ------------------------------ |
-| "GitHub Push Command"   | ✅ both terms, in order        |
-| "Push to GitHub"        | ✅ both terms, in order        |
-| "Push Git Command"      | ✅ both terms, unordered       |
-| "Git Command"           | ❌ missing "push"              |
+| Title                         | Matches?                 |
+| ----------------------------- | ------------------------ |
+| "**Git**Hub **Push** Command" | ✅ both terms, in order  |
+| "**Push** **Git** Command"    | ✅ both terms, unordered |
+| "**Git** Command"             | ❌ missing "push"        |
 
-## How results are ranked
+## Why a word must fully match
 
-Every match is scored, and results are sorted best-first. Four factors
-combine:
+For the items above `gitpush` (without spaces) won't return results.
 
-1. **Base score** — one point per matched term.
-2. **Length bonus** — longer matches beat partial ones, so `git` matching
-   "github" beats `gi` matching "github".
-3. **Position bonus** — matches that start earlier in the title score higher.
-4. **Word-start bonus** — a term that matches at the start of a word gets
-   extra points.
+Requiring each term to be a substring of a word keeps results precise: you can
+type fragments (`gi pu`) and still match _"**Gi**thub **Pu**sh Command"_, but you never get
+noise that shares just a few letters from other fuzzy algorithms (e.g. _"**Gi**thub **P**ages **U**sage"_).
 
-Unordered matches get a **0.6× multiplier** applied to their final score, so
-ordered matches always rank above unordered ones for the same title.
+The trade-off is that a typo returns nothing — retype and the score model does the rest.
 
-### Examples
+## Optimization
 
-- **"git push"** on *GitHub Push Command* — both terms match, in order, at word
-  starts → very high.
-- **"push git"** on *GitHub Push Command* — both terms match but unordered →
-  0.6× penalty, still high.
-- **"gi pu"** on *GitHub Push Command* — partial matches, shorter length bonus →
-  medium.
+Giving your bookmarks, bookmarklets and scripts good titles will go a long way in
+making the search get you better results.
+
+Bookmarks typically carry the page title, it's often short and it might not have
+the words to match your mental reference to that page.
+
+So take your time to curate them and give them better titles if you're having
+too many clashes.
 
 ## Smart ranking (recency + frequency)
 
@@ -64,22 +64,22 @@ that decides the order of otherwise-equal results:
 
 The palette is designed to be driven entirely from the keyboard:
 
-| Key                    | Action                                     |
-| ---------------------- | ------------------------------------------ |
-| `Type`                 | Filter results live                        |
-| `↓` / `↑`              | Move the highlight                          |
-| `↵`                    | Run the highlighted item                    |
-| `Alt+1` … `Alt+9`      | Run the 1st…9th result directly             |
-| `Esc`                  | Close the palette                           |
-| `⌘↵` / `Ctrl+↵`        | Run with modifiers (e.g. open in new tab)   |
+| Key                | Action                                    |
+| ------------------ | ----------------------------------------- |
+| `Type`             | Filter results live                       |
+| `Up` / `Down`      | Move the highlight                        |
+| `Alt+1` … `Alt+9`  | Run the 1st…9th result directly           |
+| `Enter`            | Run the highlighted item                  |
+| `<modifier>+Enter` | Run with modifiers (e.g. open in new tab) |
+| `Esc`              | Close the palette                         |
 
-With modifiers held while running a bookmark or command, the item executes in
-a different context — for example opening a bookmark in a new tab or a new
-window.
+Each script/command has its own way of dealing with modifiers, slightly changing
+its behaviour.
 
-## Why a word must fully match
+Use the following to control how bookmarks are opened:
 
-Requiring each term to be a substring of a word keeps results precise: you can
-type fragments (`dupli tab`) and still match *Duplicate Tab*, but you never get
-fuzzy noise that shares just a few letters. The trade-off is that a typo
-returns nothing — retype and the score model does the rest.
+| Key                        | Action                                                                   |
+| -------------------------- | ------------------------------------------------------------------------ |
+| `Right Arrow`              | Open in background tab, keeps palette open so you can open multiple tabs |
+| `Cmd+Enter` / `Ctrl+Enter` | Open in a new tab                                                        |
+| `Shift+Enter`              | Open in a new window                                                     |
