@@ -18,10 +18,11 @@ These may conflict with native browser shortcuts like the one for the print dial
 You can customize them shortcuts in the browser extension management but who
 prints anything these days? (You still can via the built-in "Print" command though.)
 
-In Chrome, extension shortcuts will take precedence over browser-native ones.
+In Chrome, extension shortcuts will take precedence over browser-native ones and
+over page shortcuts.
 
-That doesn't happen with Firefox, you'll either need to pick a different shortcut
-or disable the native one in `about:keyboard`.
+With Firefox, browser shortcuts will win over the others, you'll either need to
+pick a different shortcut or disable the native one in `about:keyboard`.
 
 ## In-palette shortcuts
 

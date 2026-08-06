@@ -6,30 +6,30 @@ lead: 'What works where — and the known gaps per browser.'
 ---
 
 Hacklets is built for Chrome (and Chromium browsers such as Edge) and works
-partially in Firefox and Safari.
+partially in Firefox.
+
+Safari is not supported at this stage.
 
 ## Compatibility matrix
 
-| Feature                       | Chrome / Edge | Firefox | Safari |
-| ----------------------------- | ------------- | ------- | ------ |
-| Bookmark search               | ✅            | ✅      | partial |
-| Built-in commands             | ✅            | ✅      | partial |
-| Bookmarklet runner            | ✅            | ✅      | partial |
-| Folder commands (local scripts) | ✅          | ❌      | ❌     |
-| New tab palette               | ✅            | partial | ❌     |
-| Favicon icons                 | ✅ native     | ✅ via Google service | ❌ |
+| Feature                     | Chrome / Edge | Firefox               |
+| --------------------------- | ------------- | --------------------- |
+| Bookmark search             | ✅            | ✅                    |
+| Built-in commands           | ✅            | ✅                    |
+| Bookmarklet runner          | ✅            | ✅                    |
+| User Scripts (local folder) | ✅            | ❌                    |
+| New tab palette             | ✅            | partial               |
+| Favicon icons               | ✅ native     | ✅ via Google service |
 
-Feature flags are detected at runtime, so a browser that gains a capability
-picks it up automatically.
+Feature support are detected at runtime, so a browser release that gains
+a capability will likely pick it up automatically.
 
 ## Firefox gaps
 
-### No folder commands
+### No filesystem access for User Scripts
 
 Firefox doesn't support the **File System Access API**, so pointing Hacklets at
-a local folder of scripts is unavailable. The rest of the extension still
-works. Supporting folder commands on Firefox would need an alternative storage
-mechanism (e.g. drag-and-drop import).
+a local folder of scripts is unavailable. The rest of the extension still works.
 
 ### Restricted domains
 
@@ -47,9 +47,9 @@ Google. Results are cached locally. See the [Privacy Policy](/hacklets/privacy/)
 
 ## Safari notes
 
-Safari support is partial. The WebExtension APIs Hacklets relies on — in
-particular `chrome.userScripts` and the File System Access API — are not
-available in Safari, which limits script execution and folder commands.
+Safari is unsupported. The WebExtension APIs Hacklets relies on to execute
+scripts in or load them from the File System Access API — are not
+available in Safari, which limits script execution.
 
 ## Stale folder listings (all browsers)
 

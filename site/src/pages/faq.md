@@ -23,7 +23,12 @@ shortcuts to take precedence, but on rare pages a site wins the key first. You
 can rebind the palette shortcuts to keys the site doesn't use — see
 [Keyboard Shortcuts](/hacklets/shortcuts/).
 
-## Folder commands show a stale file list
+## My shortcut conflicts with a browser's shortcut
+
+See [Keyboard Shortcuts](/hacklets/shortcuts/) to understand different browser
+behaviours and learn about workarounds.
+
+## User script from the filesystem show a stale file list
 
 The browser's File System Access API returns a cached snapshot of the folder,
 so newly added or renamed files may not appear immediately. Two things help:
@@ -31,13 +36,14 @@ so newly added or renamed files may not appear immediately. Two things help:
 - **Re-pick the folder** in settings to get a guaranteed-fresh handle.
 - **Accept the delay** — Chrome syncs the cache periodically on its own.
 
-Note that when a folder command *runs*, the script is always read fresh from
+Note that when a folder command _runs_, the script is always read fresh from
 disk, so you always execute the latest code.
 
 ## Folder commands don't work at all
 
-Hacklets uses the File System Access API, which Firefox doesn't support. On
-Firefox, the extension still works — built-in commands, bookmarks, and
+Hacklets uses the File System Access API, which Firefox doesn't support.
+
+On Firefox, the extension still works — built-in commands, bookmarks, and
 bookmarklets — but folder commands are unavailable. See
 [Browser Support](/hacklets/browser-support/).
 
@@ -54,5 +60,5 @@ usage history that powers smart ranking.
 ## How do I uninstall?
 
 Chrome: right-click the extension icon → **Remove from Chrome**. Your browser
-data (bookmarks, tabs) is untouched — only the extension's own stored
-preferences are removed.
+data (bookmarks, tabs) and user scripts on disk are untouched — only the
+extension's own stored preferences are removed.
