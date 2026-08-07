@@ -15,7 +15,7 @@ share any personal data.
 ### Data stored locally
 
 Hacklets stores the following in your browser's local storage
-(`chrome.storage.local` and IndexedDB):
+(`browser.storage.local` and IndexedDB):
 
 - **Recent items** — command and bookmark IDs with timestamps, used to rank
   recently-used items higher in search results.
