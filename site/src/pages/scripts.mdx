@@ -5,6 +5,8 @@ description: 'Run user scripts from a local folder with Hacklets: folder picker,
 lead: 'User Scripts — run your own JavaScript from the palette.'
 ---
 
+import Shortcut from '../components/Shortcut'
+
 Hacklets can turn any local folder of `.js` files into a set of palette
 commands. Point it at a folder and every script becomes searchable and
 runnable — without a server, without a build step.
@@ -13,7 +15,7 @@ runnable — without a server, without a build step.
 
 1. Open the settings page (right-click the extension icon → **Options**).
 2. Click **Choose Folder** and select the folder containing your scripts.
-3. Open the commands palette (**Cmd+Shift+P**) — your scripts appear alongside
+3. Open the commands palette (<Shortcut combo="Cmd+Shift+P" />) — your scripts appear alongside
    the built-in commands.
 
 The folder is remembered locally in your browser. The scripts themselves

@@ -5,6 +5,8 @@ description: 'Install Hacklets, open your first palette, and run your first comm
 lead: 'Install Hacklets and run your first command in under a minute.'
 ---
 
+import Shortcut from '../components/Shortcut'
+
 ## Install
 
 Install from the extension store for your browser:
@@ -19,10 +21,10 @@ Works better with Chromium-based browsers. See [Browser Support](/hacklets/brows
 
 There are two palettes, each with its own shortcut displaying a category of items:
 
-| Shortcut                       | Palette   | What you search                  |
-| ------------------------------ | --------- | -------------------------------- |
-| `Cmd+P` / `Ctrl+P`             | Bookmarks | Everything in your bookmarks     |
-| `Cmd+Shift+P` / `Ctrl+Shift+P` | Commands  | Built-ins, scripts, bookmarklets |
+| Shortcut                                                                  | Palette   | What you search                  |
+| ------------------------------------------------------------------------- | --------- | -------------------------------- |
+| <Shortcut combo="Cmd+P" /> <br /> <Shortcut combo="Ctrl+P" />             | Bookmarks | Everything in your bookmarks     |
+| <Shortcut combo="Cmd+Shift+P" /> <br /> <Shortcut combo="Ctrl+Shift+P" /> | Commands  | Built-ins, scripts, bookmarklets |
 
 It's possible that these may conflict with native browser shortcuts like the one
 for the print dialog.
@@ -44,9 +46,9 @@ Using shortcuts mentioned above, pick from bookmarks or commands and type to nar
 the search down.
 
 The first result is selected by default. Change the selection with up/down keys and
-press **Enter** to pick a bookmark / run a command.
+press <Shortcut combo="Enter" /> to pick a bookmark / run a command.
 
-Use **Esc** to dismiss the palette and go back to your page.
+Use <Shortcut combo="Esc" /> to dismiss the palette and go back to your page.
 
 Both use the same search engine and the same result ranking — see
 [Making the Most of Search](/hacklets/search/).

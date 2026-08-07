@@ -18,7 +18,7 @@ Safari is not supported at this stage.
 | Built-in commands           | ✅            | ✅                    |
 | Bookmarklet runner          | ✅            | ✅                    |
 | User Scripts (local folder) | ✅            | ❌                    |
-| New tab palette             | ✅            | partial               |
+| New tab palette             | ✅            | ✅                    |
 | Favicon icons               | ✅ native     | ✅ via Google service |
 
 Feature support are detected at runtime, so a browser release that gains
@@ -47,9 +47,8 @@ Google. Results are cached locally. See the [Privacy Policy](/hacklets/privacy/)
 
 ## Safari notes
 
-Safari is unsupported. The WebExtension APIs Hacklets relies on to execute
-scripts in or load them from the File System Access API — are not
-available in Safari, which limits script execution.
+Safari is unsupported at this stage. The WebExtension APIs support is limited
+and may require workarounds.
 
 ## Stale folder listings (all browsers)
 

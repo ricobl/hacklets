@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro'
 import PaletteMockup from '../components/PaletteMockup.astro'
+import Shortcut from '../components/Shortcut'
 
 const base = import.meta.env.BASE_URL
 
@@ -56,9 +57,9 @@ const features = [
 ]
 
 const shortcuts = [
-  { keys: '⌘P', label: 'Bookmarks palette' },
-  { keys: '⌘⇧P', label: 'Commands palette' },
-  { keys: '⌘.', label: 'Repeat last command' },
+  { keys: 'Cmd+P', label: 'Bookmarks palette' },
+  { keys: 'Cmd+Shift+P', label: 'Commands palette' },
+  { keys: 'Cmd+.', label: 'Repeat last command' },
 ]
 ---
 
@@ -95,7 +96,7 @@ const shortcuts = [
       <div class="mt-8 flex flex-wrap items-center justify-center gap-3 text-sm font-mono text-muted">
         {shortcuts.map((s) => (
           <span class="inline-flex items-center gap-2 rounded-lg border border-border bg-panel px-3 py-1.5">
-            <kbd class="kbd">{s.keys}</kbd>
+            <Shortcut combo={s.keys} />
             {s.label}
           </span>
         ))}
