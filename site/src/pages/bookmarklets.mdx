@@ -5,13 +5,29 @@ description: 'Run and edit javascript: bookmarklets from the Hacklets command pa
 lead: 'Run bookmarklets from the palette — no bookmark bar hunting required.'
 ---
 
-A bookmarklet is a bookmark whose URL starts with `javascript:`. Instead of
-running code through the browser address bar, bookmarklets are regular
-bookmarks you click — which makes them fiddly to find and launch.
+import Shortcut from '../components/Shortcut'
+
+A bookmarklet is a bookmark whose URL starts with `javascript:`. They are
+handy for automating repeatable actions.
+
+Using them normally requires mouse navigation, which is not always
+straightforward.
 
 Hacklets collects every `javascript:` bookmark in your bookmark store and
-surfaces it in the **commands palette**. Type its name, press **↵**, and the
-bookmarklet runs against the current page.
+surfaces it in the **commands palette**. Type its name, press <Shortcut combo="Enter" />,
+and the bookmarklet runs against the current page.
+
+## A quick example
+
+The following bookmarklet displays an alert dialog:
+
+```js
+javascript:alert('Hello')
+```
+
+However, as bookmarklets become more complex, updating them via the bookmark manager
+becomes difficult. Hacklets offers a [Script Editor](/script-editor/) that makes
+editing a breeze.
 
 ## What you can do
 
@@ -24,24 +40,7 @@ bookmarklet runs against the current page.
 - **Create new ones** — write a new bookmarklet from scratch in the script
   editor and it's added to your bookmarks, immediately searchable.
 
-## A quick example
-
-This bookmarklet greets the current page:
-
-```js
-javascript:(function () {
-  alert('Hello from Hacklets: ' + document.title)
-})()
-```
-
-Save it as a bookmark named "Greet Page", then press **⌘⇧P**, type `greet`,
-and run it.
-
-## Under the hood
-
-When you select a bookmarklet, Hacklets sends it to the background worker,
-which executes the code in the page's **MAIN world** via `chrome.userScripts`
-— the same mechanism used for folder commands, giving it full page access.
+Press <Shortcut combo="Cmd+Shift+P" />, search for your bookmarklet, and run it.
 
 ## Related
 
