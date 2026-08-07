@@ -2,10 +2,14 @@
 layout: '../layouts/Doc.astro'
 title: 'Script Editor'
 description: 'Create and edit user scripts and bookmarklets with Hacklets built-in editor.'
-lead: 'A built-in editor for your scripts and bookmarklets — with a file tree and syntax highlighting.'
+lead: 'A built-in editor for your scripts and bookmarklets, with a file tree and syntax highlighting.'
 ---
 
-<img src="/screenshots/editor.svg" alt="Placeholder: the script editor interface" />
+<hr />
+<div class="palette-mockup relative mx-auto w-full max-w-xl rounded-xl border border-border bg-panel shadow-2xl shadow-black/60 overflow-hidden">
+  <img src="/screenshots/script-editor.png" alt="Hacklets script editor interface" />
+</div>
+<hr />
 
 Hacklets ships a small script editor for creating and editing the two kinds of
 JavaScript it runs:

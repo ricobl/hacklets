@@ -21,7 +21,8 @@ runnable — without a server, without a build step.
 The folder is remembered locally in your browser. The scripts themselves
 stay on disk and are read only when a command runs.
 
-You can edit them with your preferred code editor or using the script editor
+You can edit them with your preferred code editor or using the
+<a href="/script-editor/" class="text-accent hover:underline">script editor</a>
 built into the extension.
 
 ## The metadata header
@@ -30,12 +31,13 @@ Each script carries a Greasemonkey/Tampermonkey-style header that names it:
 
 ```js
 // ==UserScript==
-// @name     Count links on page
-// @emoji    🔗
+// @name     Greet the page
+// @emoji    👋
 // @match    *://*/*
 // ==/UserScript==
 
-// your script body here
+const name = prompt('What should I call you?')
+alert(`Hello, ${name}!`)
 ```
 
 | Directive | Required | Purpose                                               |
