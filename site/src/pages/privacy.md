@@ -39,6 +39,10 @@ cached locally. No other data is included.
 
 No other external servers, APIs, or endpoints are contacted.
 
+If anonymous, aggregate usage analytics are ever added to the extension, they
+will be opt-in only, enabled by you, and used solely to understand feature
+usage. This policy will be updated before that happens.
+
 ### Bookmarks and scripts
 
 Hacklets reads your bookmarks to display them in the search palette. Bookmark
