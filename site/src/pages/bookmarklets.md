@@ -19,7 +19,7 @@ bookmarklet runs against the current page.
   command, with your other scripts and built-ins.
 - **Run them anywhere** — a bookmarklet runs on whichever page is active,
   reading the page's DOM and JavaScript.
-- **Edit them** — bookmarklets open in the [Script Editor](/hacklets/script-editor/)
+- **Edit them** — bookmarklets open in the [Script Editor](/script-editor/)
   where you can change the code and save straight back to your bookmarks.
 - **Create new ones** — write a new bookmarklet from scratch in the script
   editor and it's added to your bookmarks, immediately searchable.
@@ -45,5 +45,5 @@ which executes the code in the page's **MAIN world** via `chrome.userScripts`
 
 ## Related
 
-- [Script Editor](/hacklets/script-editor/) — create and edit bookmarklets.
-- [Scripts](/hacklets/scripts/) — run local folder scripts the same way.
+- [Script Editor](/script-editor/) — create and edit bookmarklets.
+- [Scripts](/scripts/) — run local folder scripts the same way.

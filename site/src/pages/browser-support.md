@@ -43,7 +43,7 @@ can't load. This is a deliberate browser restriction, not a Hacklets bug.
 
 Without a native `chrome://favicon/` API, Firefox fetches favicons from
 `https://www.google.com/s2/favicons`, sending each bookmark's hostname to
-Google. Results are cached locally. See the [Privacy Policy](/hacklets/privacy/).
+Google. Results are cached locally. See the [Privacy Policy](/privacy/).
 
 ## Safari notes
 

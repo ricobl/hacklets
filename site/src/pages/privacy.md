@@ -53,7 +53,7 @@ scripts are read from disk only when you run them.
 ### Permissions
 
 Hacklets requests the minimum permissions its features need. See the
-[Chrome Web Store listing copy](/hacklets/features/) for the
+[Chrome Web Store listing copy](/features/) for the
 justification of each permission.
 
 ## This website

@@ -5,7 +5,7 @@ description: 'Create and edit user scripts and bookmarklets with Hacklets built-
 lead: 'A built-in editor for your scripts and bookmarklets — with a file tree and syntax highlighting.'
 ---
 
-<img src="/hacklets/screenshots/editor.svg" alt="Placeholder: the script editor interface" />
+<img src="/screenshots/editor.svg" alt="Placeholder: the script editor interface" />
 
 Hacklets ships a small script editor for creating and editing the two kinds of
 JavaScript it runs:
@@ -36,7 +36,7 @@ Changes are written to wherever the script lives:
 When you save a script with a `@name` metadata header, the palette picks up the
 new title and emoji on next open.
 
-## Editing a folder script
+## Editing a script
 
 ```js
 // ==UserScript==
@@ -51,7 +51,7 @@ alert(`Hello, ${name}!`)
 
 Edit the `@name` or `@emoji` lines to rename the command and change its icon.
 Add or remove `@match` lines to control which pages the script appears on.
-See [Scripts](/hacklets/scripts/) for the full header
+See [Scripts](/scripts/) for the full header
 reference.
 
 ## Editing a bookmarklet
@@ -62,5 +62,5 @@ back to your bookmarks.
 
 ## Related
 
-- [Scripts](/hacklets/scripts/) — folder command format and metadata.
-- [Bookmarklets](/hacklets/bookmarklets/) — what bookmarklets can do.
+- [Scripts](/scripts/) — folder command format and metadata.
+- [Bookmarklets](/bookmarklets/) — what bookmarklets can do.
