@@ -1,13 +1,13 @@
 ---
 layout: '../layouts/Doc.astro'
 title: 'Getting Started'
-description: 'Install Hacklets, open your first palette, and run your first command.'
+description: 'Install Hacklets, enable user scripts, and run your first command.'
 lead: 'Install Hacklets and run your first command in under a minute.'
 ---
 
 import Shortcut from '../components/Shortcut'
 
-## Install
+## 1. Install
 
 Install from the extension store for your browser:
 
@@ -15,46 +15,81 @@ Install from the extension store for your browser:
 - Firefox (pending registration)
 - Edge (pending registration)
 
-Works better with Chromium-based browsers. See [Browser Support](/browser-support/) for the details.
+Optimised for Chromium-based browsers (Chrome / Edge). See [Browser Support](/browser-support/) for details.
 
-## The two palettes
+## 2. Configure the shortcuts
 
-There are two palettes, each with its own recommended shortcut displaying a category of items:
+After installing, the browser may not honour the recommended defaults, in that case
+you can set them up manually:
 
 | Shortcut                                                                  | Palette   | What you search                  |
 | ------------------------------------------------------------------------- | --------- | -------------------------------- |
 | <Shortcut combo="Cmd+P" /> <br /> <Shortcut combo="Ctrl+P" />             | Bookmarks | Everything in your bookmarks     |
 | <Shortcut combo="Cmd+Shift+P" /> <br /> <Shortcut combo="Ctrl+Shift+P" /> | Commands  | Built-ins, scripts, bookmarklets |
 
-It's possible that these may conflict with native browser shortcuts like the one
-for the print dialog.
+These may conflict with native browser shortcuts like the one for the
+print dialog or open private window (Firefox). You can rebind them:
 
-You can customize these shortcuts in the browser extension management but who
-prints anything these days? (You still can via the built-in "Print" command.)
+- **Chrome / Edge** — open `chrome://extensions/shortcuts`, find Hacklets, and
+  click the pencil icon next to a shortcut. Extension shortcuts take precedence
+  over browser-native ones.
+- **Firefox** — open `about:addons`, select Hacklets, and edit shortcuts via the
+  gear menu. Native shortcuts win here, so if a shortcut is not working pick a
+  different combination or disable the native one in `about:keyboard`.
 
-In Chrome, extension shortcuts will take precedence over browser-native ones.
+See [Shortcuts](/shortcuts/) for more information and troubleshooting conflicts.
 
-That doesn't happen with Firefox, you'll either need to pick a different shortcut
-or disable the native one in `about:keyboard`.
+## 3. Allow user scripts permission
 
-See [Shortcuts](/shortcuts/) for more information and troubleshooting
-conflicts.
+Hacklets can run your own JavaScript through the browser's user scripts API, which
+is off by default. Until it is enabled, bookmarklets and user scripts won't run.
 
-## Open your first palette
+1. Open the settings page (right-click the extension icon → **Options**).
+2. If a banner reads "User Scripts Permission is Disabled", click **Grant
+   Permission** or **Open Extension Settings**:
+   - On Chrome, this opens the extension page — toggle the **User scripts**
+     permission on, then return to the settings page.
+   - On Firefox, the browser shows a permission prompt — accept it.
+3. The banner disappears once the permission is active.
 
-Using shortcuts mentioned above, pick from bookmarks or commands and type to narrow
-the search down.
+## 4. Pick a user scripts folder (optional)
 
-The first result is selected by default. Change the selection with up/down keys and
-press <Shortcut combo="Enter" /> to pick a bookmark / run a command.
+Hacklets turns any local folder of `.js` files into palette commands.
 
-Use <Shortcut combo="Esc" /> to dismiss the palette and go back to your page.
+1. Open the settings page (right-click the extension icon → **Options**).
+2. Click **Choose Folder** and select the folder containing your scripts.
+3. Open the commands palette — your scripts appear alongside the built-in
+   commands.
 
-Both use the same search engine and the same result ranking — see
-[Making the Most of Search](/search/).
+The folder is remembered locally in your browser. Scripts are read from disk
+only when a command runs. See [Scripts](/scripts/) for details.
+
+## 5. Start creating your own scripts (optional)
+
+Create `.js` files in your folder, each with a UserScript metadata header:
+
+```js
+// ==UserScript==
+// @name     Greet the page
+// @emoji    👋
+// @match    *://*/*
+// ==/UserScript==
+
+const name = prompt('What should I call you?')
+alert(`Hello, ${name}!`)
+```
+
+The header's `@name` becomes the command title, `@emoji` the icon, and `@match`
+the pages the script appears on.
+
+Use the built-in
+<a href="/script-editor/" class="text-accent hover:underline">script editor</a>
+to create and edit scripts.
 
 ## What's next
 
-- [Scripts](/scripts/) — run JavaScript from a local folder.
+- [Making the Most of Search](/search/) — learn how the search works to streamline your workflow.
+- [User Scripts](/scripts/) — run JavaScript from a local folder.
+- [Bookmarklets](/scripts/) — run JavaScript from your saved bookmarklets.
 - [Keyboard Shortcuts](/shortcuts/) — customize every shortcut.
 - [Command Reference](/command-reference/) — every built-in command.

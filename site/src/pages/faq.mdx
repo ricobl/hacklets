@@ -9,17 +9,18 @@ lead: 'Troubleshooting and common questions.'
 
 A few things to check:
 
-- Make sure the extension is loaded and enabled in `chrome://extensions`.
+- Make sure the extension is loaded and enabled in your browser extension management.
+- Make sure shortcuts are mapped, see [Keyboard Shortcuts](/shortcuts/).
 - If you installed it before an update, reopen your tabs once — the palette
   injects into already-open tabs on update.
 - Some browsers refuse to inject on certain pages. See
   [Browser Support](/browser-support/) for the pages
   where the palette won't appear.
 
-## My shortcut conflicts with a website's shortcut
+## My custom shortcut won't work / conflicts with a website's shortcut
 
-Websites can register their own keyboard shortcuts. Hacklets registers its
-shortcuts to take precedence, but on rare pages a site wins the key first. You
+Websites can register their own keyboard shortcuts. Hacklets registers your
+shortcuts to take precedence, but on rare occasions a site wins the key first. You
 can rebind the palette shortcuts to keys the site doesn't use — see
 [Keyboard Shortcuts](/shortcuts/).
 
@@ -57,8 +58,19 @@ synced or sent to a server. See the [Privacy Policy](/privacy/).
 Run the **Reset Recent Items** command from the commands palette. It clears the
 usage history that powers smart ranking.
 
+## Why does it need permission "..."?
+
+Extensions declare permissions needed to perform certain actions like running
+scripts, manipulating pages/UI or fetching content.
+
+See [Permissions](/permissions/) for explanations for each of the requested
+permissions.
+
 ## How do I uninstall?
 
-Chrome: right-click the extension icon → **Remove from Chrome**. Your browser
-data (bookmarks, tabs) and user scripts on disk are untouched — only the
-extension's own stored preferences are removed.
+Use your browser's extension management to remove the extension.
+
+On Chrome: right-click the extension icon → **Remove from Chrome**.
+
+Your browser data (bookmarks, tabs) and user scripts on disk are untouched —
+only the extension's own stored preferences are removed.
