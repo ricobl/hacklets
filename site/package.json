@@ -22,7 +22,7 @@
     "@tailwindcss/vite": "^4.1.4",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.4",
-    "astro": "^5.4.1",
+    "astro": "^7.2.1",
     "astro-relative-links": "^0.4.2",
     "lucide-react": "^1.29.0",
     "react": "^19.2.8",
