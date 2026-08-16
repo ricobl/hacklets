@@ -4,19 +4,27 @@ import edge from '@browser-logos/edge/edge.svg?url'
 import firefox from '@browser-logos/firefox/firefox.svg?url'
 
 const stores = [
-  { label: 'Chrome Web Store', logo: chrome, href: '#' },
-  { label: 'Edge Add-ons', logo: edge, href: '#' },
-  { label: 'Firefox Add-ons', logo: firefox, href: '#' },
+  { label: 'Chrome Web Store', logo: chrome, href: 'https://chromewebstore.google.com/detail/hacklets/fkikeaefjeebkanfbnhmaljcgfkbagdb' },
+  { label: 'Edge Add-ons', logo: edge, href: 'https://microsoftedge.microsoft.com/addons/detail/hacklets/lhhankbgclanebboclgjggdkoniinhen' },
+  { label: 'Firefox Add-ons', logo: firefox, href: '#', disabled: true },
 ]
 ---
 
 <div class="store-buttons flex flex-wrap items-center justify-center gap-3">
-  {stores.map((s) => (
-    <a href={s.href} class="btn-ghost">
-      <img src={s.logo} alt="" width="20" height="20" />
-      {s.label}
-    </a>
-  ))}
+  {stores.map((s) =>
+    s.disabled ? (
+      <span class="inline-flex items-center gap-2 rounded-lg border border-border bg-panel px-5 py-2.5 text-muted/50 opacity-60 cursor-not-allowed select-none">
+        <img src={s.logo} alt="" width="20" height="20" class="opacity-60 grayscale" />
+        {s.label}
+        <span class="text-[0.7em]">(pending)</span>
+      </span>
+    ) : (
+      <a href={s.href} class="btn-ghost">
+        <img src={s.logo} alt="" width="20" height="20" />
+        {s.label}
+      </a>
+    )
+  )}
 </div>
 
 <style>
