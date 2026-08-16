@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro'
 import PaletteMockup from '../components/PaletteMockup.astro'
 import Shortcut from '../components/Shortcut'
+import StoreButtons from '../components/StoreButtons.astro'
 
 const base = import.meta.env.BASE_URL
 
@@ -91,6 +92,10 @@ const shortcuts = [
         <a href={base + 'features/'} class="btn-ghost">
           Explore features
         </a>
+      </div>
+
+      <div class="mt-5">
+        <StoreButtons />
       </div>
 
       <div class="mt-8 flex flex-wrap items-center justify-center gap-3 text-sm font-mono text-muted">

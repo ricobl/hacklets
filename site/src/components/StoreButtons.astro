@@ -1,0 +1,30 @@
+---
+import chrome from '@browser-logos/chrome/chrome.svg?url'
+import edge from '@browser-logos/edge/edge.svg?url'
+import firefox from '@browser-logos/firefox/firefox.svg?url'
+
+const stores = [
+  { label: 'Chrome Web Store', logo: chrome, href: '#' },
+  { label: 'Edge Add-ons', logo: edge, href: '#' },
+  { label: 'Firefox Add-ons', logo: firefox, href: '#' },
+]
+---
+
+<div class="store-buttons flex flex-wrap items-center justify-center gap-3">
+  {stores.map((s) => (
+    <a href={s.href} class="btn-ghost">
+      <img src={s.logo} alt="" width="20" height="20" />
+      {s.label}
+    </a>
+  ))}
+</div>
+
+<style>
+  .store-buttons a {
+    color: var(--color-ink);
+    text-decoration: none;
+  }
+  .store-buttons a:hover {
+    color: var(--color-accent);
+  }
+</style>
